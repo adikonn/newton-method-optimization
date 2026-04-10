@@ -36,7 +36,7 @@ class MyLogisticRegression:
         return 1. / (1 + np.exp(-t))
 
     @staticmethod
-    def grad(self, X, y, y_pred):
+    def grad(X, y, y_pred):
         l = X.shape[0]
         grad = (X.T @ (y_pred - y)) / l
 
@@ -55,7 +55,7 @@ class MyLogisticRegression:
         y = y[:, np.newaxis]
         l, n = X.shape
         X = np.hstack([np.ones([X.shape[0], 1]), X])
-        weights = np.random.randn(n + 1, 1)\
+        weights = np.random.randn(n + 1, 1)
 
         losses = []
         for iter_num in range(max_iter):
